@@ -1,0 +1,71 @@
+
+html { box-sizing: border-box; }
+*, *:before, *:after { box-sizing: inherit; }
+body {
+	background: url("lul.jpg") no-repeat center center fixed;
+	background-size: cover;
+	text-transform: lowercase;
+	font-family: monospace;
+	font-size: 18px;
+	color: white;
+    padding: 0;
+    margin: 0;
+}
+
+div#background {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+}
+
+legend {
+    font-size: 1.5em;
+}
+
+
+.tab[data-active="True"] {
+    display: block;
+    border-radius: 2px;
+}
+
+.tabBox {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+
+.content {
+  font-size:0.7em;
+  display: table-cell;
+   border: thin hidden black;
+   border-radius: 2px;
+   padding: 1px 1px 1px 1px;
+   margin:2px;
+   height: 35px;
+   width: 8em;
+   text-align: center;
+   cursor: pointer;
+
+   color: white;
+
+}
+
+.content[data-state="True"] {
+	 border: thin solid green;
+   color: white;
+}
+.content[data-state="Partial"] {
+    border: thin solid yellow;
+    color: white;
+}
+
+
+.content_input {
+    display: none;
+}
+
+.fadeIn { animation: fadeIn 0.75s 0.75s both ease-in; }
+@keyframes fadeIn {
+	from { opacity: 0; }
+	to   { opacity: 1; }
+}
