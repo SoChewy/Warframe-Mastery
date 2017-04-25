@@ -53,11 +53,6 @@ class HistoryCls {
     // So to store history data the hash history tag is formated like
     // #version={version},flags=(a 366 digit long string of 0-1's)
 
-    constructor (master_data, history_size=367){
-        this.master = master_data;
-        this.data = new Array(history_size).fill(0);
-    }
-
     update(id, value, push=false){
         var position = this.master.json_id2pos[id];
         this.data[position] = value;
