@@ -48,10 +48,6 @@ class StorageCls {
 
 
 class HistoryCls {
-    //Generally URLS have a 1024 character limit, some browsers go up
-    // much higher but assuming 1024 is probably safest.
-    // So to store history data the hash history tag is formated like
-    // #version={version},flags=(a 366 digit long string of 0-1's)
 
     update(id, value, push=false){
         var position = this.master.json_id2pos[id];
@@ -240,26 +236,6 @@ class ClickHandler {
 
     }
 
-    function menuclick(evt) {
-        var menu_buttons,
-            el = evt.currentTarget,
-            el_id = el.getAttribute("id"),
-            child_id = el.getAttribute("data-dest"),
-            button,
-            child_panel,
-            state;
-
-        menu_buttons = document.getElementsByClassName("menu-option");
-        for(var i = 0; i < menu_buttons.length; i++){
-            button = menu_buttons[i];
-            child_panel = document.getElementById(button.getAttribute("data-dest"));
-
-            state = button.getAttribute("id") == el_id ? "True" : "False";
-            button.setAttribute("data-active", state);
-            child_panel.setAttribute("data-active", state);
-        }
-        show_or_hide_groceries(el.innerHTML);
-    }
 
 
     function reload(storage, history){
